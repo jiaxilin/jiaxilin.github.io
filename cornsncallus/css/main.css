@@ -36,7 +36,7 @@ body {
 	.under-construction {
 		background-image: url(../assets/images/bg-main.jpg);
 		background-position: top left;
-		padding: 125px;
+		padding: 125px 0 0 10%;
 	}
 }
 .under-construction img {
@@ -47,6 +47,6 @@ body {
 @media only screen and (min-width: 1024px) {
 	.under-construction img {
 		width: 100%;
-		max-width: 560px;
+		max-width: 520px;
 	}
 }
