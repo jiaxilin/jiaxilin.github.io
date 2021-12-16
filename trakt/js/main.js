@@ -45,7 +45,7 @@ $(document).ready(function() {
 					var director, runtime;
 
 					$.when(ajax_director(trakt_movie_id), ajax_runtime(trakt_movie_id)).done(function(a1, a2) {
-						director = a1[0].crew.directing[a1[0].crew.directing.findIndex(e => e.job.includes('Director', 0))].person.name;
+						director = a1[0].crew.directing[a1[0].crew.directing.findIndex(e => e.jobs.indexOf('Director') > -1)].person.name;
 						runtime = a2[0].runtime;
 						
 						$("#watchlist tbody").append(`
