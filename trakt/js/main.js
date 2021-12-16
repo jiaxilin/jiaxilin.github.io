@@ -42,7 +42,7 @@ $(document).ready(function() {
 						dataType: 'json',
 						data: {
 							extended: 'full'
-						}
+						},
 						success: function(res) {
 							// runtime = res.runtime;
 							console.log(res);
