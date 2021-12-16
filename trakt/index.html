@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Trakt</title>
+	</head>
+
+	<body>
+		<h1>Watchlist</h1>
+
+		<table width="640" cellpadding="10" cellspacing="1" border="1" id="watchlist">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Year</th>
+					<th>Director</th>
+					<th>Runtime (min)</th>
+				</tr>
+			</thead>
+
+			<tbody>
+			</tbody>
+		</table>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+		<script>
+			$(document).ready(function() {
+				var api_key = '90bc62ae93bc6cdb8d726039ef45cbcb375c4b5c23bb22cf58ca039e96ecb1ef';
+
+				$.ajax({
+					type: 'GET',
+					url: 'https://api.trakt.tv/users/loljiaxi/watchlist/movies/added',
+					headers: {
+						"trakt-api-key": api_key,
+						"trakt-api-version": 2
+					},
+					dataType: 'json',
+					success: function(res) {
+						$.each(res, function(i, e) {
+							var trakt_movie_id = e.movie.ids.trakt;
+							var director, runtime;
+
+							$.ajax({
+								type: 'GET',
+								url: 'https://api.trakt.tv/movies/' + trakt_movie_id + '/people',
+								headers: {
+									"trakt-api-key": api_key,
+									"trakt-api-version": 2
+								},
+								dataType: 'json',
+								success: function(res) {
+									director = res.crew.directing[res.crew.directing.findIndex(e => e.job == 'Director')].person.name;
+								},
+								error: function(err) {
+									console.log(err);
+								}
+							});
+
+							$.ajax({
+								type: 'GET',
+								url: 'https://api.trakt.tv/movies/' + trakt_movie_id,
+								headers: {
+									"trakt-api-key": api_key,
+									"trakt-api-version": 2
+								},
+								dataType: 'json',
+								success: function(res) {
+									runtime = res.runtime;
+								},
+								error: function(err) {
+									console.log(err);
+								}
+							});
+
+							$("#watchlist tbody").append(`
+								<tr>
+									<td>${e.movie.title}</td>
+									<td>${e.movie.year}</td>
+									<td>${director}</td>
+									<td>${runtime}</td>
+								</tr>
+							`);
+						})
+					},
+					error: function(err) {
+						console.log(err);
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
