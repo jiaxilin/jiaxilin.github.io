@@ -40,6 +40,9 @@ $(document).ready(function() {
 							"trakt-api-version": 2
 						},
 						dataType: 'json',
+						data: {
+							extended: 'full'
+						}
 						success: function(res) {
 							// runtime = res.runtime;
 							console.log(res);
