@@ -17,29 +17,39 @@ body {
 	position: relative;
 }
 
+body {
+	width: 100%;
+	height: 100vh;
+	overflow: auto;
+	
+	> div:not(.bg) {
+		padding: 35px 35px 0;
+
+		@media only screen and (min-width: 768px) {
+			padding: 60px 60px 0;
+		}
+		@media only screen and (min-width: 1024px) {
+			padding: 80px 0 0 100px;
+		}
+
+		@media only screen and (min-width: 1280px) {
+			padding: 110px 0 0 8%;
+		}
+	}
+}
+
+@supports (-webkit-touch-callout: none) {
+	html,
+	body {
+		height: 100%;
+	}
+}
+
 .clearfix:before,
 .clearfix:after {
 	content: "";
 	clear: both;
 	overflow: auto;
-}
-
-body {
-	width: 100%;
-	height: 100vh;
-	padding: 35px 35px 0;
-	overflow: auto;
-
-	@media only screen and (min-width: 768px) {
-		padding: 60px 60px 0;
-	}
-	@media only screen and (min-width: 1024px) {
-		padding: 80px 0 0 100px;
-	}
-
-	@media only screen and (min-width: 1280px) {
-		padding: 110px 0 0 8%;
-	}
 }
 
 .bg {
@@ -54,6 +64,7 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	// background-attachment: fixed;
 
 	@media only screen and (min-width: 1280px) {
 		background-image: url(../assets/images/bg-main.jpeg);
