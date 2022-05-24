@@ -3,9 +3,10 @@ body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
+	min-height: 100%;
 	position: relative;
-	overflow: auto;
+	overflow: hidden;
 	box-sizing: border-box;
 	font-family: 'Silka Mono', Monospace;
 }
@@ -13,6 +14,7 @@ body {
 * {
 	box-sizing: border-box;
 	overflow: auto;
+	position: relative;
 }
 
 .clearfix:before,
@@ -24,8 +26,9 @@ body {
 
 body {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	padding: 35px 35px 0;
+	overflow: auto;
 
 	@media only screen and (min-width: 768px) {
 		padding: 60px 60px 0;
@@ -42,10 +45,10 @@ body {
 .bg {
 	position: fixed;
 	top: 0;
-	bottom: 0;
 	left: 0;
-	right: 0;
 	z-index: -1;
+	width: 100%;
+	height: 100vh;
 
 	background-image: url(../assets/images/bg-main-mobile.jpeg);
 	background-repeat: no-repeat;
@@ -81,6 +84,7 @@ body {
 		max-width: 575px;
 		font-size: 14px;
 		line-height: 1.8em;
+		color: #151515;
 
 		@media only screen and (min-width: 768px) {
 			font-size: 18px;
