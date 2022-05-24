@@ -1,0 +1,162 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: auto;
+	box-sizing: border-box;
+	font-family: "Silka Mono", Monospace;
+}
+
+* {
+	box-sizing: border-box;
+	overflow: auto;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	clear: both;
+	overflow: auto;
+}
+
+body {
+	width: 100%;
+	height: 100%;
+	padding: 35px 35px 0;
+}
+@media only screen and (min-width: 768px) {
+	body {
+		padding: 60px 60px 0;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	body {
+		padding: 80px 0 0 100px;
+	}
+}
+@media only screen and (min-width: 1280px) {
+	body {
+		padding: 110px 0 0 8%;
+	}
+}
+
+.bg {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: -1;
+	background-image: url(../assets/images/bg-main-mobile.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+@media only screen and (min-width: 1280px) {
+	.bg {
+		background-image: url(../assets/images/bg-main.jpeg);
+		background-position: center;
+	}
+}
+
+.site-status {
+	width: 80%;
+	height: auto;
+	max-width: 400px;
+}
+@media only screen and (min-width: 1280px) {
+	.site-status {
+		width: 100%;
+		max-width: 490px;
+	}
+}
+
+@media only screen and (min-width: 1280px) {
+	.site-desc {
+		width: 60%;
+		float: left;
+	}
+}
+.site-desc .about {
+	margin: 30px 0;
+	font-family: "Silka Mono", Monospace;
+	max-width: 575px;
+	font-size: 14px;
+	line-height: 1.8em;
+}
+@media only screen and (min-width: 768px) {
+	.site-desc .about {
+		font-size: 18px;
+	}
+}
+.site-desc .about h1 {
+	font-size: 1em;
+	font-weight: normal;
+}
+.site-desc .about > * {
+	display: inline;
+}
+.site-desc a.social {
+	color: inherit;
+	text-decoration: none;
+	font-weight: 600;
+	font-family: inherit;
+	font-size: 0.81em;
+	margin: 40px 0;
+	display: block;
+}
+@media only screen and (min-width: 768px) {
+	.site-desc a.social {
+		font-size: 17px;
+	}
+}
+.site-desc a.social img {
+	vertical-align: middle;
+	margin-right: 5px;
+	width: 30px;
+	height: 30px;
+	object-fit: contain;
+}
+@media only screen and (min-width: 768px) {
+	.site-desc a.social img {
+		width: 40px;
+		height: 40px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.site-location {
+		width: 80%;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.site-location {
+		width: 70%;
+	}
+}
+@media only screen and (min-width: 1280px) {
+	.site-location {
+		width: 40%;
+		float: right;
+	}
+}
+.site-location h3 {
+	font-family: "Thin Pencil Handwriting", Cursive;
+	font-size: 15px;
+	text-align: center;
+}
+@media only screen and (min-width: 768px) {
+	.site-location h3 {
+		font-size: 18px;
+	}
+}
+.site-location img {
+	width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	padding: 0 30px;
+}

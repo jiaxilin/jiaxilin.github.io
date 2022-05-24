@@ -1,0 +1,24 @@
+@font-face {
+	font-family: 'Silka Mono';
+	src: url('./SilkaMono/silkamono-regular-webfont.eot');
+	src: url('./SilkaMono/silkamono-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('./SilkaMono/silkamono-regular-webfont.woff2') format('woff2'),
+		 url('./SilkaMono/silkamono-regular-webfont.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Silka Mono';
+	src: url('./SilkaMono/silkamono-semibold-webfont.eot');
+	src: url('./SilkaMono/silkamono-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('./SilkaMono/silkamono-semibold-webfont.woff2') format('woff2'),
+		 url('./SilkaMono/silkamono-semibold-webfont.ttf') format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Thin Pencil Handwriting';
+	src: url('./ThinPencilHandwriting/ThinPencilHandwriting.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
